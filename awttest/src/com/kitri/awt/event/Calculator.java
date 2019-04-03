@@ -11,8 +11,7 @@ public class Calculator extends Frame{
 	Panel pN = new Panel();
 	Panel pC = new Panel();
 	Panel pS = new Panel();
-	
-	
+		
 	Label numL = new Label();
 	Label opeol = new Label();
 	Button bt[] = new Button[16];
