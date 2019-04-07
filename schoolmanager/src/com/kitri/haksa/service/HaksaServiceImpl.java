@@ -4,11 +4,13 @@ import java.io.*;
 import java.util.ArrayList;
 
 import com.kitri.haksa.data.HaksaDto;
+import com.kitri.haksa.db.OracleTest;
 
 public class HaksaServiceImpl implements HaksaService {
 	
 	
 	ArrayList<HaksaDto> list = new ArrayList<HaksaDto>();
+	OracleTest ora = new OracleTest();
 	
 	
 	
@@ -193,6 +195,9 @@ public class HaksaServiceImpl implements HaksaService {
 	@Override
 	public void register(HaksaDto haksa) {
 		list.add(haksa);
+		String sql = "INSERT INTO SCHOOL(name,age,key,value)";
+		sql += "VALUES("+ haksa + ")";
+		System.out.println(sql);
 	}
 
 

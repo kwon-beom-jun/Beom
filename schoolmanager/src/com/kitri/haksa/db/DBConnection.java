@@ -12,9 +12,10 @@ public class DBConnection
         {
             Connection conn = null;
             try {
-                String user = "kitri"; 
+        
+            	String user = "kitri"; 
                 String pw = "kitri";
-                String url = "jdbc:oracle:thin:192.168.0.180:1521:orcl";
+                String url = "jdbc:oracle:thin:@192.168.0.180:1521:orcl";
                 
                 Class.forName("oracle.jdbc.driver.OracleDriver");        
                 conn = DriverManager.getConnection(url, user, pw);

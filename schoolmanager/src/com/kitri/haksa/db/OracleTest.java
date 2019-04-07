@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class OracleTest 
 {
     public static void main(String args[])
-    {
+    {	
         Connection conn = null; // DB연결된 상태(세션)을 담은 객체
         PreparedStatement pstm = null;  // SQL 문을 나타내는 객체
         ResultSet rs = null;  // 쿼리문을 날린것에 대한 반환값을 담을 객체
@@ -17,31 +17,30 @@ public class OracleTest
         try {
             // SQL 문장을 만들고 만약 문장이 질의어(SELECT문)라면
             // 그 결과를 담을 ResulSet 객체를 준비한 후 실행시킨다.
-            String quary = "SELECT * FROM COUNTRIES";
+            String quary = "SELECT * FROM SCHOOL";
             
             conn = DBConnection.getConnection();
             pstm = conn.prepareStatement(quary);
             rs = pstm.executeQuery();
             
+            
             /*  COUNTRIES 테이블의 데이터 타입
-             * 
-                EMPNO NOT NULL NUMBER(4) -- int
-                ENAME VARCHAR2(10) -- String
-                JOB VARCHAR2(9) -- String
-                MGR NUMBER(4) -- int
-                HIREDATE DATE -- Date
-                SAL NUMBER(7,2) -- float/double
-                COMM NUMBER(7,2) -- float/double
-                DEPTNO NUMBER(2) -- int
-                
-                COUNTRYID CHAR(2 BYTE) -- String
-                COUNTRYNAME VARCHAR2(40 BYTE) -- String
-                REGIONID NUMBER -- int
+              	
+              	school
+                name varchar2(10) -- String
+                age number(3) -- number
+    			key number(1) -- number
+    			value varchar2(20) -- String
+    			
+    			job
+    			key number(1) -- number
+    			key_name varchar2(10) -- String
+            
             */
             
 //          System.out.println("EMPNO ENAME JOB MGR HIREDATE SAL COMM DEPTNO");
-            System.out.println("COUNTRY_ID COUNTRY_NAME REGION_ID");
-            System.out.println("==================================");
+            System.out.println("name \tage \tkey \tvalue");
+            System.out.println("================================");
             
             while(rs.next()){
 //                int empno = rs.getInt(1);
@@ -53,11 +52,13 @@ public class OracleTest
 //                int sal = rs.getInt(6);
 //                int comm = rs.getInt(7);
 //                int deptno = rs.getInt(8);
-            	String countryid = rs.getString(1);
-            	String countryname = rs.getString(2);
-            	Number regionid = rs.getInt(3);
-                
-                String result = countryid+" "+countryname+" "+regionid;
+            	String name = rs.getString("name");
+            	Number age = rs.getInt("age");
+            	Number key = rs.getInt("key");
+            	String value = rs.getString("value");
+            	
+            	
+                String result = name+" "+age+" "+key+" "+value;
                 System.out.println(result);
             }
             
