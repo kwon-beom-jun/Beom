@@ -28,7 +28,7 @@ public class OracleTest2 {
 		
 		try {
 			
-			con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.180:1521:orcl","kitri","kitri");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.14.20:1521:orcl","kitri","kitri");
 			// url 연결시도.
 			stat = con.createStatement();
 			// createStatement(); = SQL를 송신하기위한 Statement 오브젝트를 작성합니다.
@@ -47,11 +47,11 @@ public class OracleTest2 {
 			e.printStackTrace();
 			System.out.println("연결실패");
 		} finally {
-			try {
-				con.commit();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				con.commit();
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			}
 			try {
 				con.close();
 			} catch (SQLException e) {
@@ -59,7 +59,7 @@ public class OracleTest2 {
 			}
 		}
 		
-		try {
+try {
 			
 			String quary = "SELECT * FROM SCHOOL";
 			

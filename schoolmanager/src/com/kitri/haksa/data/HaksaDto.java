@@ -9,7 +9,6 @@ public class HaksaDto {
 	private int key;
 	private String value;
 
-	
 	public HaksaDto(int age, String name, int key, String value) {
 		super();
 		this.age = age;
@@ -20,8 +19,8 @@ public class HaksaDto {
 	
 	@Override
 	public String toString() {
-		HaksaServiceImpl haksaServiceImpl = new HaksaServiceImpl();
-		return "나이 : " + age + "\n이름 : " + name + "\n" + haksaServiceImpl.getJob(key) + " : " + value + "\n";
+//		HaksaServiceImpl haksaServiceImpl = new HaksaServiceImpl();
+		return "나이 : " + age + "\n이름 : " + name + "\n" + key + " : " + value + "\n";
 	}
 	
 	public int getAge() {

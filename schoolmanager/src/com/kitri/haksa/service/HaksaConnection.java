@@ -1,14 +1,13 @@
-package com.kitri.haksa.db;
+package com.kitri.haksa.service;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
-public class DBConnection 
-{
-    public static Connection dbConn;
+import com.kitri.haksa.db.MakeConnection;
+
+public class HaksaConnection {
+	public static Connection dbConn;
     
-    public static Connection getConnection()
+    public Connection getConnection()
     {
         Connection conn = null;
         try {
@@ -32,5 +31,5 @@ public class DBConnection
         }
         return conn;     
     }
+    
 }
- 
