@@ -10,7 +10,7 @@ public class OracleTest
 {
     public static void main(String args[])
     {	
-        Connection conn = null; // DB연결된 상태(세션)을 담은 객체
+    	Connection conn = null; // DB연결된 상태(세션)을 담은 객체
         PreparedStatement pstm = null;  // SQL 문을 나타내는 객체
         ResultSet rs = null;  // 쿼리문을 날린것에 대한 반환값을 담을 객체
         
